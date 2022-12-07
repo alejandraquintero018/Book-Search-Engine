@@ -26,11 +26,11 @@ const typeDefs = gql`
  removeBook(bookId: ID!): User
  }
 
-
  type Query = {
     users: [User]
     user:(username: String!): User
     me: User 
+    books: []
  } 
 
  type Auth = {

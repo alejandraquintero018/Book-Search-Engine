@@ -4,9 +4,13 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = { 
     Query: { 
+        users: async () => {
+            return User.find().populate('users')
+        },
         books: async () => { 
-            return user.find().populate('books'); 
-        }
+            return User.find().populate('books'); 
+        },
+        me: 
     }, 
      
     Mutations: { 
@@ -32,7 +36,9 @@ const resolvers = {
 
             return { token, user } 
         }, 
-        saveBook: {}, 
+        saveBook: {
+
+        }, 
         removeBook: async (parent, {})
     }
 }
